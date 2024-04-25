@@ -4,9 +4,11 @@
              x:Class="ShellFlyoutSample.Create"
              Title="Create">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid RowDefinitions="*,*,*,*">
+            <Button Text="New Invoice" />
+            <Button Text="New Line Item" Grid.Row="1" />
+            <Button Text="New Customer" Grid.Row="2" />
+            <Button Text="New Employee" Grid.Row="3" Clicked="NewEmployeeClicked" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

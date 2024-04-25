@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1707bb80bb00c38606be4769b156c136b4c99ce2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0f005ac3b761230306d93dac1e08bcdce311778c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

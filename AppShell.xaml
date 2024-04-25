@@ -8,27 +8,27 @@
 
     <FlyoutItem Title="Create" FlyoutIcon="{StaticResource IconOne}">
         <ShellContent
-            Title="Two"
+            Title="Create"
             ContentTemplate="{DataTemplate local:Create}"
-            Route="OnePage" />
+            Route="Create" />
     </FlyoutItem>
     <FlyoutItem Title="Manage" FlyoutIcon="{StaticResource IconTwo}">
         <ShellContent
-            Title="Two"
+            Title="Manage"
             ContentTemplate="{DataTemplate local:Manage}"
-            Route="TwoPage" />
+            Route="Manage" />
     </FlyoutItem>
     <FlyoutItem Title="Feedback" FlyoutIcon="{StaticResource IconThree}">
         <ShellContent
-            Title="Three"
+            Title="Feedback"
             ContentTemplate="{DataTemplate local:Feedback}"
-            Route="ThreePage" />
+            Route="Feedback" />
     </FlyoutItem>
-    <FlyoutItem Title="Four" FlyoutIcon="{StaticResource IconFour}">
+    <FlyoutItem Title="Settings" FlyoutIcon="{StaticResource IconFour}">
         <ShellContent
-            Title="Four"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="FourPage" />
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:Manage}"
+            Route="Settings" />
     </FlyoutItem>
 
 </Shell>

@@ -34,6 +34,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = ShellFlyoutSample.Create.x
 build_metadata.AdditionalFiles.TargetPath = Create.xaml
 build_metadata.AdditionalFiles.RelativePath = Create.xaml
 
+[/Users/jackturk/Documents/onward-front/onwardfrontend/CreateEmployee.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ShellFlyoutSample.CreateEmployee.xaml
+build_metadata.AdditionalFiles.TargetPath = CreateEmployee.xaml
+build_metadata.AdditionalFiles.RelativePath = CreateEmployee.xaml
+
 [/Users/jackturk/Documents/onward-front/onwardfrontend/Feedback.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShellFlyoutSample.Feedback.xaml
@@ -63,3 +69,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShellFlyoutSample.Resources.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles.xaml
+
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Settings.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ShellFlyoutSample.Settings.xaml
+build_metadata.AdditionalFiles.TargetPath = Settings.xaml
+build_metadata.AdditionalFiles.RelativePath = Settings.xaml
