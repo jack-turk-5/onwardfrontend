@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ShellFlyoutSample"
+             x:Class="ShellFlyoutSample.CreateEmployee"
+             Title="CreateEmployee">
+    <VerticalStackLayout>
+        <Entry x:Name="EmpName" Placeholder="Enter Name" />
+        <Entry x:Name="EmpRole" Placeholder="Enter Role" />
+        <Button Text="Cancel" Clicked="Cancel" />
+        <Button Text="Submit" Clicked="Submit" />
+    </VerticalStackLayout>
+</ContentPage>
