@@ -40,11 +40,19 @@ Follow the step for **Visual Studio 2022** from [Microsoft's website](https://vi
 ## _NuGet_
 **Addtional Nuget packages can be found on Project task Bar label as "Manage NuGet Packages". You can dowload it right on Visual Studio or visit the follwing website for guide.** 
 
-1. Having Microsoft.Maui.Controls(8.0.20) a cross-platform framework for C# ,XAML, and runs such as Android, iOS, macOS, Tizen, and Windows from a single shared codebase.[nuget.org's website](https://www.nuget.org/packages/Microsoft.Maui.Controls/8.0.20?_src=template) <br>
+1. Having Microsoft.Maui.Controls(8.0.21) a cross-platform framework for C# ,XAML, and runs such as Android, iOS, macOS, Tizen, and Windows from a single shared codebase.[nuget.org's website](https://www.nuget.org/packages/Microsoft.Maui.Controls/8.0.20?_src=template) <br>
 
-2. Having Microsoft.Maui.Controls.Compatibility(8.0.20) a APIs and views that allow for easier migration from Xamarin.Forms.[nuget.org's website](https://www.nuget.org/packages/Microsoft.Maui.Controls.Compatibility/8.0.20?_src=template) <br> 
+2. Having Microsoft.Maui.Controls.Compatibility(8.0.21) a APIs and views that allow for easier migration from Xamarin.Forms.[nuget.org's website](https://www.nuget.org/packages/Microsoft.Maui.Controls.Compatibility/8.0.20?_src=template) <br>
 
+3. Having Microsoft.Extensions.Logging.Debug(8.0.0) Debug output logger provider implementation .[nuget.org's website](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/8.0.0?_src=template) <br>
 
+4. Having Microsoft.Maui.Essentials(8.0.21) collection of cross-platform APIs for working with device sensors and other features.[nuget.org's website](https://www.nuget.org/packages/Microsoft.Maui.Essentials/8.0.21?_src=template) <br> 
+
+5. Having  Microsoft.NET.ILLink.Tasks(8.0.4) tell where to reference by an SDK.[nuget.org's website](https://www.nuget.org/packages/Microsoft.NET.ILLink.Tasks/8.0.4?_src=template) <br> 
+
+6. Having Newtonsoft.Json(13.0.3) a  high-performance JSON framework for . NET.[nuget.org's website](https://www.nuget.org/packages/Newtonsoft.Json/13.0.3?_src=template) <br> 
+
+7. Having GoogleGson(2.10.1.8)Gson library use to convert a java object into Json a string convert Json string to an equivalent Java object.[nuget.org's website](https://www.nuget.org/packages/GoogleGson/2.10.1.8?_src=template) <br> 
   
 ## _Installation_
 
