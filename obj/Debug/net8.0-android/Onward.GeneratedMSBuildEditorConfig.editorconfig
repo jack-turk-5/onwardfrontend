@@ -12,65 +12,65 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Onward
-build_property.ProjectDir = D:\onwardfront\onwardfrontend\
+build_property.ProjectDir = /Users/jackturk/Documents/onward-front/onwardfrontend/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[D:/onwardfront/onwardfrontend/App.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/onwardfront/onwardfrontend/AppShell.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/onwardfront/onwardfrontend/Create.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Create.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Create.xaml
 build_metadata.AdditionalFiles.TargetPath = Create.xaml
 build_metadata.AdditionalFiles.RelativePath = Create.xaml
 
-[D:/onwardfront/onwardfrontend/CreateEmployee.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/CreateEmployee.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.CreateEmployee.xaml
 build_metadata.AdditionalFiles.TargetPath = CreateEmployee.xaml
 build_metadata.AdditionalFiles.RelativePath = CreateEmployee.xaml
 
-[D:/onwardfront/onwardfrontend/Feedback.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Feedback.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Feedback.xaml
 build_metadata.AdditionalFiles.TargetPath = Feedback.xaml
 build_metadata.AdditionalFiles.RelativePath = Feedback.xaml
 
-[D:/onwardfront/onwardfrontend/MainPage.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/onwardfront/onwardfrontend/Manage.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Manage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Manage.xaml
 build_metadata.AdditionalFiles.TargetPath = Manage.xaml
 build_metadata.AdditionalFiles.RelativePath = Manage.xaml
 
-[D:/onwardfront/onwardfrontend/Resources/Colors.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Resources/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Resources.Colors.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Colors.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Colors.xaml
 
-[D:/onwardfront/onwardfrontend/Resources/Styles.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Resources/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Resources.Styles.xaml
-build_metadata.AdditionalFiles.TargetPath = Resources\Styles.xaml
-build_metadata.AdditionalFiles.RelativePath = Resources\Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles.xaml
 
-[D:/onwardfront/onwardfrontend/Settings.xaml]
+[/Users/jackturk/Documents/onward-front/onwardfrontend/Settings.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Onward.Settings.xaml
 build_metadata.AdditionalFiles.TargetPath = Settings.xaml
