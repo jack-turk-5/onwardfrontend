@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 public class Program
 {

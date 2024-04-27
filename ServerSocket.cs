@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 public class ServerSocket
 {

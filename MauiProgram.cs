@@ -1,4 +1,4 @@
-﻿namespace ShellFlyoutSample;
+﻿namespace Onward;
 
 public static class MauiProgram
 {

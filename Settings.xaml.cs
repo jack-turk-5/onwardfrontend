@@ -1,4 +1,4 @@
-namespace ShellFlyoutSample;
+namespace Onward;
 
 public partial class Settings : ContentPage
 {

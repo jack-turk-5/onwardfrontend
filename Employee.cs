@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 // using Newtonsoft.Json;FIXME need this dependency
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 public class Employee : INotifyPropertyChanged
 {
