@@ -1,10 +1,12 @@
-﻿using System.Text;
+﻿using System.Net.Http.Headers;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Onward;
 
 public class ServerSocket
 {
-    private readonly string baseUrl = "http://localhost:8080/";
+    private readonly string baseUrl = "http://localhost:8080";
     private readonly HttpClient httpClient;
 
     public ServerSocket()
@@ -12,8 +14,33 @@ public class ServerSocket
         httpClient = new HttpClient();
     }
 
+    public async Task<string> Login(string username, string password)
+    {
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+        {
+            throw new Exception("username/password is null");
+        }
+        else
+        {
+            string url = baseUrl + "/auth/login";
+            var loginData = new { Username = username, Password = password };
+            var response = await httpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(loginData)));
+            if(response.IsSuccessStatusCode)
+            {
+                string token = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+                TokenStorage.SaveToken(token);
+                return response.StatusCode.ToString();
+            }
+            else
+            {
+                throw new Exception("$Failed to login {response.StatusCode}");
+            }
+        }
+    }
+
     public async Task<string> GetAsync(string endpt)
     {
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
         var response = await httpClient.GetAsync(url);
         return await HandleResponseAsync(response);
@@ -21,6 +48,7 @@ public class ServerSocket
 
     public async Task<string> PutAsync(string data, string endpt)
     {
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
         StringContent content = new(data, Encoding.UTF8, "application/json");
         var response = await httpClient.PutAsync(url, content);
@@ -29,6 +57,7 @@ public class ServerSocket
 
     public async Task<string> PostAsync(string data, string endpt)
     {
+        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
         StringContent content = new(data, Encoding.UTF8, "application/json");
         var response = await httpClient.PostAsync(url, content);

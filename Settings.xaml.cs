@@ -7,7 +7,7 @@ public partial class Settings : ContentPage
 		InitializeComponent();
 	}
 
-	private async void NewUser(object sender, EventArgs e)
+	private async void CreateUser(object sender, EventArgs e)
 	{
 		await Navigation.PushModalAsync(new CreateUser());
 	}

@@ -1,24 +1,24 @@
-﻿namespace Onward;
+﻿using System.Net;
+
+namespace Onward;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	private readonly ServerSocket serverSocket;
 
 	public MainPage()
 	{
+		serverSocket = new();
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	private async void LoginAndAuthenticate(object sender, EventArgs e)
 	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		var response = await serverSocket.Login(Username.Text, Password.Text);
+		if (response.Equals(HttpStatusCode.OK))
+		{
+			Application.Current.MainPage = new AppShell();
+		}
 	}
 }
 
