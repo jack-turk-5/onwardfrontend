@@ -1,10 +1,10 @@
 AreAnyAssembliesTrimmed=false
-				AssemblyName=ShellFlyoutSample.dll
+				AssemblyName=Onward.dll
 				
 				AOTCompiler=/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Runtime.AOT.osx-arm64.Cross.maccatalyst-arm64/8.0.4/Sdk/../tools/mono-aot-cross
 				AOTOutputDirectory=obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/nativelibraries/aot-output/
 				DedupAssembly=obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/aot-instances.dll
-				AppBundleManifestPath=bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/ShellFlyoutSample.app/Contents/Info.plist
+				AppBundleManifestPath=bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/Onward.app/Contents/Info.plist
 				CacheDirectory=/Users/jackturk/Documents/onward-front/onwardfrontend/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/linker-cache
 				
 				Debug=true
@@ -214,7 +214,7 @@ MonoLibrary=/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Runtime.Mono.mac
 				PartialStaticRegistrarLibrary=/usr/local/share/dotnet/packs/Microsoft.MacCatalyst.Runtime.maccatalyst-arm64/17.2.8053/runtimes/maccatalyst-arm64/native/Microsoft.MacCatalyst.registrar.a
 				Platform=MacCatalyst
 				PlatformAssembly=Microsoft.MacCatalyst.dll
-				RelativeAppBundlePath=../ShellFlyoutSample.app/
+				RelativeAppBundlePath=../Onward.app/
 				Registrar=
 				RequirePInvokeWrappers=
 				RuntimeConfigurationFile=runtimeconfig.bin
