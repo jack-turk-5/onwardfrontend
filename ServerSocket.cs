@@ -27,8 +27,15 @@ public class ServerSocket
             var response = await httpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(loginData)));
             if(response.IsSuccessStatusCode)
             {
-                string token = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
-                TokenStorage.SaveToken(token);
+                string? token = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+                if(!string.IsNullOrEmpty(token)) 
+                {
+                    TokenStorage.SaveToken(token); 
+                }
+                else
+                {
+                    throw new Exception("null token");
+                }
                 return response.StatusCode.ToString();
             }
             else

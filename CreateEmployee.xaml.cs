@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace Onward;
 
 public partial class CreateEmployee : ContentPage
@@ -23,7 +25,8 @@ public partial class CreateEmployee : ContentPage
 		toSubmit.Role = EmpRole.Text;
 
 		//Need to add a line here to serialize, need newtonsoft nuget package
-		Task<string>post = serverSocket.PostAsync(toSubmit.ToString(), "/employees");
+		string json = JsonConvert.SerializeObject(toSubmit);
+		Task<string>post = serverSocket.PostAsync(json, "/employees/addemployee");
 	}
 
 }

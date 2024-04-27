@@ -4,7 +4,7 @@ public class TokenStorage
 {
     public static async Task<string> GetToken()
     {
-        string token = await SecureStorage.GetAsync("jwt-token");
+        string? token = await SecureStorage.GetAsync("jwt-token");
         if (string.IsNullOrEmpty(token))
         {
             throw new Exception("Token is null");
@@ -26,7 +26,7 @@ public class TokenStorage
 
     public static async void DeleteToken()
     {
-        string token = await SecureStorage.GetAsync("jwt-token");
+        string? token = await SecureStorage.GetAsync("jwt-token");
         if (string.IsNullOrEmpty(token))
         {
             throw new Exception("Token is null");
