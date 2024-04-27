@@ -17,7 +17,11 @@ public partial class MainPage : ContentPage
 		var response = await serverSocket.Login(Username.Text, Password.Text);
 		if (response.Equals(HttpStatusCode.OK))
 		{
-			Application.Current.MainPage = new AppShell();
+			await Navigation.PushModalAsync(new AppShell());
+		}
+		else
+		{
+			await DisplayAlert("Could not authenticate", "Invalid Credentials", "Cancel");
 		}
 	}
 }

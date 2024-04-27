@@ -4,10 +4,7 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.MainPage"
              Title="MainPage">
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
+        <VerticalStackLayout VerticalOptions="Center">
             <Entry x:Name="Username" Placeholder="Username" />
             <Entry x:Name="Password" Placeholder="Password" />
             <Button Text="Login" Clicked="LoginAndAuthenticate" />
