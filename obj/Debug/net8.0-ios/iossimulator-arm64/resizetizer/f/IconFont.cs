@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Maui;
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 static class IconFont
 {

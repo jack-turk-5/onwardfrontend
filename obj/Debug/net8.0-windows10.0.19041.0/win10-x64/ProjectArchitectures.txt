@@ -1,1 +1,0 @@
-D:\onwardfront\onwardfrontend\Onward.csproj;x64
