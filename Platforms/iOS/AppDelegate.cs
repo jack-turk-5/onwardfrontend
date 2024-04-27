@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f5f00e973368863f9ba2e91b7004254b61a0f9fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+07f71beaa4e7fcbc9c413057d8564acea9b9e301")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShellFlyoutSample")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

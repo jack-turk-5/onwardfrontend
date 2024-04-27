@@ -5,7 +5,7 @@
 //------------------------------------------------------------------------------
 using System;
 
-namespace ShellFlyoutSample {
+namespace Onward {
 	#pragma warning disable IDE0002
 	public partial class Resource : _Microsoft.Android.Resource.Designer.ResourceConstant {
 	}

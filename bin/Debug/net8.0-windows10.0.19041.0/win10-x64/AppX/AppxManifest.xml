@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Publisher="CN=User Name" Name="com.companyname.shellflyoutsample" Version="1.0.0.1" ProcessorArchitecture="x64" />
+  <Identity Publisher="CN=User Name" Name="com.groupq.onward" Version="1.0.0.1" ProcessorArchitecture="x64" />
   <Properties>
     <PublisherDisplayName>User Name</PublisherDisplayName>
-    <DisplayName>ShellFlyoutSample</DisplayName>
+    <DisplayName>Onward</DisplayName>
     <Logo>appiconStoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -22,9 +22,9 @@
     <Resource Language="EN-US" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="ShellFlyoutSample.exe" EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="ShellFlyoutSample" Description="ShellFlyoutSample" BackgroundColor="transparent" Square150x150Logo="appiconMediumTile.png" Square44x44Logo="appiconLogo.png">
-        <uap:DefaultTile Wide310x150Logo="appiconWideTile.png" Square71x71Logo="appiconSmallTile.png" Square310x310Logo="appiconLargeTile.png" ShortName="ShellFlyoutSample">
+    <Application Id="App" Executable="Onward.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Onward" Description="Onward" BackgroundColor="transparent" Square150x150Logo="appiconMediumTile.png" Square44x44Logo="appiconLogo.png">
+        <uap:DefaultTile Wide310x150Logo="appiconWideTile.png" Square71x71Logo="appiconSmallTile.png" Square310x310Logo="appiconLargeTile.png" ShortName="Onward">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
             <uap:ShowOn Tile="wide310x150Logo" />

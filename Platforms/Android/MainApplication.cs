@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace ShellFlyoutSample;
+namespace Onward;
 
 [Application]
 public class MainApplication : MauiApplication
