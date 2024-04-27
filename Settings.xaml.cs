@@ -6,4 +6,14 @@ public partial class Settings : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void NewUser(object sender, EventArgs e)
+	{
+		await Navigation.PushModalAsync(new CreateUser());
+	}
+
+	private void LogOut(object sender, EventArgs e)
+	{
+		throw new NotImplementedException();
+	}
 }
