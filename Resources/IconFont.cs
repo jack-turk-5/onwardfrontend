@@ -1,7 +1,4 @@
-﻿
-using Microsoft.Maui;
-
-namespace Onward;
+﻿namespace Onward;
 
 static class IconFont
 {
