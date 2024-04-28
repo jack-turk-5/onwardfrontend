@@ -2,11 +2,11 @@
 
 namespace Onward;
 
-public partial class MainPage : ContentPage
+public partial class LoginPage : ContentPage
 {
 	private readonly ServerSocket serverSocket;
 
-	public MainPage()
+	public LoginPage()
 	{
 		serverSocket = new();
 		BindingContext = this;
