@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.LoginPage"
-             Title="LoginPage">
+             Title="Login">
         <VerticalStackLayout>
             <Grid RowDefinitions="*,*,*">
                 <Entry x:Name="Username" Placeholder="Username" />
-                <Entry x:Name="Password" Placeholder="Password" Grid.Row="1" />
+                <Entry x:Name="Password" Placeholder="Password" Grid.Row="1" IsPassword="true" />
                 <Button Text="Login" Clicked="LoginAndAuthenticate" Grid.Row="2" />
             </Grid>
         </VerticalStackLayout>
