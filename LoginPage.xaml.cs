@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Data;
+using System.Net;
 
 namespace Onward;
 
@@ -18,11 +19,7 @@ public partial class LoginPage : ContentPage
 		string response = await serverSocket.Login(Username.Text, Password.Text);
 		if (response.Equals(HttpStatusCode.OK.ToString()) && Application.Current != null)
 		{
-            Application.Current.MainPage = new AppShell();
-		}
-		else
-		{
-			await DisplayAlert("Could not authenticate", "Invalid Credentials", "Cancel");
+            Application.Current.MainPage = new AuthAppShell();
 		}
 	}
 }

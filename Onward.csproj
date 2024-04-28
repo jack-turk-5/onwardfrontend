@@ -94,6 +94,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="AuthAppShell.xaml.cs">
+	    <DependentUpon>AuthAppShell.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Create.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
