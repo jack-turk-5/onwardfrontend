@@ -38,11 +38,22 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<_LibXamarinLinkMode>static</_LibXamarinLinkMode>
+		<_LibMonoLinkMode>static</_LibMonoLinkMode>
+		<InvariantGlobalization>true</InvariantGlobalization>
+	</PropertyGroup>
+	<Target Name="_FixMonoLinkMode" AfterTargets="_MonoReadAvailableComponentsManifest">
+		<ItemGroup>
+			<_MonoRuntimeComponentLinking Remove="dynamic" />
+			<_MonoRuntimeComponentLinking Include="static" RuntimeIdentifier="iossimulator-arm64" />
+		</ItemGroup>
+	</Target>
+
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
 	  <CodesignKey>Apple Development: Jack Turk (VFF35L66G4)</CodesignKey>
 	  <CodesignProvision>onwardprovisions</CodesignProvision>
 	</PropertyGroup>
-
 
 	<ItemGroup>
 		<!-- App Icon -->

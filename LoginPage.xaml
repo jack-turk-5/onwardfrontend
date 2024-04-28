@@ -6,8 +6,8 @@
              Title="LoginPage">
         <VerticalStackLayout>
             <Grid RowDefinitions="*,*,*">
-                <Editor x:Name="Username" Placeholder="Username" />
-                <Editor x:Name="Password" Placeholder="Password" Grid.Row="1" />
+                <Entry x:Name="Username" Placeholder="Username" />
+                <Entry x:Name="Password" Placeholder="Password" Grid.Row="1" />
                 <Button Text="Login" Clicked="LoginAndAuthenticate" Grid.Row="2" />
             </Grid>
         </VerticalStackLayout>

@@ -1,4 +1,6 @@
-﻿namespace Onward;
+﻿using Microsoft.Extensions.Logging;
+
+namespace Onward;
 
 public static class MauiProgram
 {
@@ -13,7 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("fa_solid.ttf", "FontAwesome");
             });
-
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
 		return builder.Build();
 	}
 }
