@@ -16,12 +16,6 @@ public class ServerSocket
 
     public async Task<string> Login(string username, string password)
     {
-        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-        {
-            throw new Exception("username/password is null");
-        }
-        else
-        {
             string url = baseUrl + "/auth/login";
             var AuthRequest = new { username, password };
             string jsonStr = JsonConvert.SerializeObject(AuthRequest);
@@ -42,9 +36,8 @@ public class ServerSocket
             }
             else
             {
-                throw new Exception($"Error: {response.StatusCode}");
+                return "wrong";
             }
-        }
     }
 
     public async Task<string> GetAsync(string endpt)

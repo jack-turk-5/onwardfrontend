@@ -26,7 +26,7 @@ public partial class CreateEmployee : ContentPage
 
 		//Need to add a line here to serialize, need newtonsoft nuget package
 		string json = JsonConvert.SerializeObject(toSubmit);
-		Task<string>post = serverSocket.PostAsync(json, "/employees/addemployee");
-	}
+        _ = serverSocket.PostAsync(json, "/employees/newemployee");
+    }
 
 }
