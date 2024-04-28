@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Graphics.Win2D;
-using System.Net;
+﻿using System.Net;
 
 namespace Onward;
 
@@ -13,12 +12,6 @@ public partial class LoginPage : ContentPage
 		BindingContext = this;
 		InitializeComponent();
 	}
-
-    public static void LoginError()
-    {
-         
-    }
-
     private async void LoginAndAuthenticate(object sender, EventArgs e)
 	{
 		string response = await serverSocket.Login(Username.Text, Password.Text);
