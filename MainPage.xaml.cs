@@ -14,10 +14,10 @@ public partial class MainPage : ContentPage
 
 	private async void LoginAndAuthenticate(object sender, EventArgs e)
 	{
-		var response = await serverSocket.Login(Username.Text, Password.Text);
-		if (response.Equals(HttpStatusCode.OK))
+		string response = await serverSocket.Login(Username.Text, Password.Text);
+		if (response.Equals(HttpStatusCode.OK.ToString()) && Application.Current != null)
 		{
-			await Navigation.PushModalAsync(new AppShell());
+            Application.Current.MainPage = new AppShell();
 		}
 		else
 		{

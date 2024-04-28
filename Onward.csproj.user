@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugFramework>net8.0-ios</ActiveDebugFramework>
-    <ActiveDebugProfile>Remote Device</ActiveDebugProfile>
-    <SelectedPlatformGroup>RemoteDevice</SelectedPlatformGroup>
+    <ActiveDebugFramework>net8.0-windows10.0.19041.0</ActiveDebugFramework>
+    <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
+    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
     <DefaultDevice>pixel_5</DefaultDevice>
     <DeveloperId>8XWV724WV4</DeveloperId>
     <DevelopmentTeamId>8XWV724WV4</DevelopmentTeamId>

@@ -23,14 +23,16 @@ public class ServerSocket
         else
         {
             string url = baseUrl + "/auth/login";
-            var loginData = new { Username = username, Password = password };
-            var response = await httpClient.PostAsync(url, new StringContent(JsonConvert.SerializeObject(loginData)));
+            var AuthRequest = new { username = username, password = password };
+            string jsonStr = JsonConvert.SerializeObject(AuthRequest);
+            StringContent json = new(jsonStr, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync(url, json);
             if(response.IsSuccessStatusCode)
             {
-                string? token = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+                string? token = await response.Content.ReadAsStringAsync();
                 if(!string.IsNullOrEmpty(token)) 
                 {
-                    TokenStorage.SaveToken(token); 
+                    TokenStorage.SaveToken(token);
                 }
                 else
                 {
@@ -40,7 +42,7 @@ public class ServerSocket
             }
             else
             {
-                throw new Exception("$Failed to login {response.StatusCode}");
+                throw new Exception("Failed to login " + response.StatusCode.ToString() + " " + username + " " + password + " " + url);
             }
         }
     }
