@@ -39,7 +39,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-ios'">
-	  <CodesignKey>Apple Development: Created via API </CodesignKey>
+	  <CodesignKey>Apple Development: Jack Turk (VFF35L66G4)</CodesignKey>
 	  <CodesignProvision>onwardprovisions</CodesignProvision>
 	</PropertyGroup>
 

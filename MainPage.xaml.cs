@@ -9,6 +9,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		serverSocket = new();
+		BindingContext = this;
 		InitializeComponent();
 	}
 
