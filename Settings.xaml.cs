@@ -12,8 +12,12 @@ public partial class Settings : ContentPage
 		await Navigation.PushModalAsync(new CreateUser());
 	}
 
-	private void LogOut(object sender, EventArgs e)
+	private async void LogOut(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		if(Application.Current != null)
+		{
+			await Navigation.PopToRootAsync();
+			Application.Current.MainPage = new AppShell();
+		}
 	}
 }
