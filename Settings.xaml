@@ -4,9 +4,7 @@
              x:Class="Onward.Settings"
              Title="Settings">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Button Text="Create User" Clicked="CreateUser"/>
+        <Button Text="Log Out" Clicked="LogOut" />
     </VerticalStackLayout>
 </ContentPage>

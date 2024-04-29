@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Onward.AuthAppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Onward"
+    Shell.FlyoutBehavior="Flyout">
+
+    <FlyoutItem Title="Create" FlyoutIcon="{StaticResource IconOne}">
+        <ShellContent
+            Title="Create"
+            ContentTemplate="{DataTemplate local:Create}"
+            Route="Create" />
+    </FlyoutItem>
+    <FlyoutItem Title="Manage" FlyoutIcon="{StaticResource IconTwo}">
+        <ShellContent
+            Title="Manage"
+            ContentTemplate="{DataTemplate local:Manage}"
+            Route="Manage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Feedback" FlyoutIcon="{StaticResource IconThree}">
+        <ShellContent
+            Title="Feedback"
+            ContentTemplate="{DataTemplate local:Feedback}"
+            Route="Feedback" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings" FlyoutIcon="{StaticResource IconFour}">
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:Settings}"
+            Route="Settings" />
+    </FlyoutItem>
+
+</Shell>

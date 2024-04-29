@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel;
-// using Newtonsoft.Json;FIXME need this dependency
+using Newtonsoft.Json;
 
 namespace Onward;
 
 public class Employee : INotifyPropertyChanged
 {
     private string name;
-    //[JsonProperty(PropertyName = "name")] FIXME need this dependency
+    [JsonProperty(PropertyName = "name")]
     public string Name
     {
             get { return name; }
@@ -20,7 +20,7 @@ public class Employee : INotifyPropertyChanged
             }
         }
     private string role;
-    // [JsonProperty(PropertyName = "role")] FIXME need this dependency
+    [JsonProperty(PropertyName = "role")]
     public string Role
     {
             get { return role; }
@@ -46,7 +46,7 @@ public class Employee : INotifyPropertyChanged
     this.role = role;
    }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
