@@ -82,6 +82,9 @@
 	  <MauiXaml Update="CreateCustomer.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CreateLineItem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Feedback.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

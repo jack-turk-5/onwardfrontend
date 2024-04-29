@@ -17,6 +17,9 @@
     <MauiXaml Update="CreateCustomer.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="CreateLineItem.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Feedback.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

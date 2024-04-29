@@ -1,13 +1,13 @@
 namespace Onward;
 
-public partial class CreateCustomer : ContentPage
+public partial class CreateLineItem : ContentPage
 {
-    Customer toSubmit;
+    LineItem toSubmit;
     private ServerSocket serverSocket;
-    public CreateCustomer()
-    {
+    public CreateLineItem()
+	{
         // BindingContext = this;
-        toSubmit = new Customer();
+        toSubmit = new LineItem();
         serverSocket = new();
         InitializeComponent();
     }
@@ -19,11 +19,13 @@ public partial class CreateCustomer : ContentPage
 
     private void Submit(object sender, EventArgs e)
     {
+        toSubmit.Id = (long)Convert.ToDouble(EmpID);
         toSubmit.Name = EmpName.Text;
-        toSubmit.Role = EmpRole.Text;
+        toSubmit.Quantity = (int)Convert.ToDouble(EmpQuantity);
+        toSubmit.Description = EmpDescription.Text;
+        toSubmit.Price = (int)Convert.ToDouble(EmpPrice);
 
         //Need to add a line here to serialize, need newtonsoft nuget package
-        Task<string> post = serverSocket.PostAsync(toSubmit.ToString(), "/customers");
+        Task<string> post = serverSocket.PostAsync(toSubmit.ToString(), "/lineitem");
     }
-
 }

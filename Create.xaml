@@ -6,7 +6,7 @@
     <VerticalStackLayout>
         <Grid RowDefinitions="*,*,*,*">
             <Button Text="New Invoice" />
-            <Button Text="New Line Item" Grid.Row="1" />
+            <Button Text="New Line Item" Grid.Row="1" Clicked="NewLineItemClicked"/>
             <Button Text="New Customer" Grid.Row="2" Clicked="NewCustomerClicked"/>
             <Button Text="New Employee" Grid.Row="3" Clicked="NewEmployeeClicked" />
         </Grid>
