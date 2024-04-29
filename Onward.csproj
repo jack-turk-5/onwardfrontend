@@ -79,6 +79,9 @@
 	  <MauiXaml Update="Create.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CreateCustomer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Feedback.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
