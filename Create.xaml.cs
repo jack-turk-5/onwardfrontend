@@ -6,6 +6,10 @@ public partial class Create : ContentPage
 	{
 		InitializeComponent();
 	}
+    private async void NewInvoiceClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new CreateInvoice(), true);
+    }
     private async void NewLineItemClicked(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new CreateLineItem(), true);

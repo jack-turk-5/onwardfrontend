@@ -106,6 +106,9 @@
 	  <MauiXaml Update="CreateCustomer.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CreateInvoice.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="CreateLineItem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
