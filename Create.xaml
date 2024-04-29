@@ -6,9 +6,9 @@
              >
     <VerticalStackLayout Spacing="6" Margin="50" >
         <Grid RowDefinitions="*,*,*,*,*">
-            <Button Text="   New Invoice   " Grid.Row="1" VerticalOptions="Center"
+            <Button Text="New Invoice" Grid.Row="1" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
-    HorizontalOptions="Center" />
+                   HorizontalOptions="Center" Clicked="NewInvoiceClicked" />
             <Button Text="New Line Item" Grid.Row="2" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
                 HorizontalOptions="Center" Clicked="NewLineItemClicked"/>
