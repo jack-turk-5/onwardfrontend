@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Onward.Create"
-             Title="Create">
-    <VerticalStackLayout>
-        <Grid RowDefinitions="*,*,*,*">
-            <Button Text="New Invoice" />
-            <Button Text="New Line Item" Grid.Row="1" />
-            <Button Text="New Customer" Grid.Row="2" Clicked="NewCustomerClicked"/>
-            <Button Text="New Employee" Grid.Row="3" Clicked="NewEmployeeClicked" />
+             Title="Create"
+             >
+    <VerticalStackLayout Spacing="6" Margin="50" >
+        <Grid RowDefinitions="*,*,*,*,*">
+            <Button Text="   New Invoice   " Grid.Row="1" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+    HorizontalOptions="Center" />
+            <Button Text="New Line Item" Grid.Row="2" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                HorizontalOptions="Center" Clicked="NewLineItemClicked"/>
+            <Button Text="New Customer" Grid.Row="3"  VerticalOptions="Center"
+                    WidthRequest="300" Margin="10"
+                HorizontalOptions="Center" Clicked="NewCustomerClicked"/>
+            <Button Text="New Employee" Grid.Row="4"  VerticalOptions="Center"
+                    WidthRequest="300" Margin="10"
+                HorizontalOptions="Center" Clicked="NewEmployeeClicked" />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
