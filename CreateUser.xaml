@@ -4,9 +4,10 @@
              x:Class="Onward.CreateUser"
              Title="CreateUser">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Entry x:Name="Username" Placeholder="Username" />
+        <Entry x:Name="Email" Placeholder="Email" />
+        <Entry x:Name="Password" Placeholder="Password" />
+        <Entry x:Name="Roles" Placeholder="Roles" />
+        <Button Text="Submit" Clicked="Submit" />
     </VerticalStackLayout>
 </ContentPage>

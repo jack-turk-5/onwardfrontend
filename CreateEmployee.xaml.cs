@@ -19,14 +19,14 @@ public partial class CreateEmployee : ContentPage
 		await Navigation.PopModalAsync();
 	}
 
-	private void Submit(object sender, EventArgs e)
+	private async void Submit(object sender, EventArgs e)
 	{
 		toSubmit.Name = EmpName.Text;
 		toSubmit.Role = EmpRole.Text;
 
-		//Need to add a line here to serialize, need newtonsoft nuget package
 		string json = JsonConvert.SerializeObject(toSubmit);
-        _ = serverSocket.PostAsync(json, "/employees/newemployee");
+    	await serverSocket.PostAsync(json, "/employees/newemployee");
+		await Navigation.PopModalAsync(true);
     }
 
 }
