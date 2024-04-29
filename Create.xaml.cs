@@ -12,7 +12,7 @@ public partial class Create : ContentPage
     }
     private async void NewCustomerClicked(object sender, EventArgs e)
     {
-        await Navigation.PushModalAsync(new CreateEmployee(), true);
+        await Navigation.PushModalAsync(new CreateCustomer(), true);
     }
     private async void NewEmployeeClicked(object sender, EventArgs e)
 	{

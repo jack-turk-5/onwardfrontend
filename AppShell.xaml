@@ -4,13 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Onward"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="DarkCyan"
+    >
 
     <FlyoutItem Title="Create" FlyoutIcon="{StaticResource IconOne}">
         <ShellContent
             Title="Create"
             ContentTemplate="{DataTemplate local:Create}"
-            Route="Create" />
+            Route="Create" 
+            />
     </FlyoutItem>
     <FlyoutItem Title="Manage" FlyoutIcon="{StaticResource IconTwo}">
         <ShellContent
