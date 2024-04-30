@@ -4,10 +4,20 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateInvoice"
              Title="CreateInvoice">
-    <VerticalStackLayout>
-        <Entry x:Name="InvoiceName" Placeholder="Enter Name" />
-            <Entry x:Name="InvoiceRole" Placeholder="Enter Role" />
-            <Button Text="Cancel" Clicked="Cancel" />
-            <Button Text="Submit" Clicked="Submit" />
+    <VerticalStackLayout  Spacing="6" Margin="50">
+        <Grid RowDefinitions="*,*,*,*,*">
+        <Entry x:Name="InvoiceName" Grid.Row="1" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Placeholder="Enter Name" />
+        <Entry x:Name="InvoiceRole" Grid.Row="2" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Placeholder="Enter Role" />
+        <Button Text="Cancel" Grid.Row="3" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Clicked="Cancel" />
+        <Button Text="Submit" Grid.Row="4" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Clicked="Submit" />
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

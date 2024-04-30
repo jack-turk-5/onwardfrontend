@@ -4,10 +4,20 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateEmployee"
              Title="CreateEmployee">
-    <VerticalStackLayout>
-        <Entry x:Name="EmpName" Placeholder="Enter Name" />
-        <Entry x:Name="EmpRole" Placeholder="Enter Role" />
-        <Button Text="Cancel" Clicked="Cancel" />
-        <Button Text="Submit" Clicked="Submit" />
+    <VerticalStackLayout  Spacing="6" Margin="50">
+        <Grid RowDefinitions="*,*,*,*,*">
+        <Entry x:Name="EmpName"  Grid.Row="1" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Placeholder="Enter Name" />
+        <Entry x:Name="EmpRole"  Grid.Row="2" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Placeholder="Enter Role" />
+        <Button Text="Cancel"  Grid.Row="3" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Clicked="Cancel" />
+        <Button Text="Submit"  Grid.Row="4" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Clicked="Submit" />
+         </Grid>
     </VerticalStackLayout>
 </ContentPage>

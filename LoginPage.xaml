@@ -5,10 +5,16 @@
              x:Class="Onward.LoginPage"
              Title="Login">
         <VerticalStackLayout>
-            <Grid RowDefinitions="*,*,*">
-                <Entry x:Name="Username" Placeholder="Username" />
-                <Entry x:Name="Password" Placeholder="Password" Grid.Row="1" IsPassword="true" />
-                <Button Text="Login" Clicked="LoginAndAuthenticate" Grid.Row="2" />
+            <Grid RowDefinitions="*,*,*,*">
+            <Entry x:Name="Username"  Grid.Row="1" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" Placeholder="Username" />
+            <Entry x:Name="Password" Placeholder="Password"  Grid.Row="2" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" IsPassword="true" />
+            <Button Text="Login" Clicked="LoginAndAuthenticate"  Grid.Row="3" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" />
             </Grid>
         </VerticalStackLayout>
 </ContentPage>
