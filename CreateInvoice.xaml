@@ -8,7 +8,6 @@
             <!--<Entry x:Name="InvCustomer" Placeholder="Customer"/>-->
             <!--DropdownBox here for contact person-->
             <!--DropdownBox for employees here-->
-            <Entry x:Name="InvRole" Placeholder="Enter Role" />
             <!--ItemSelector page-->
             <Entry x:Name="InvDate" IsEnabled="False" />
             <!--Automatically generate?-->

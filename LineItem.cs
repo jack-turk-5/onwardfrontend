@@ -5,8 +5,8 @@ namespace Onward;
 
 public class LineItem : INotifyPropertyChanged
 {
-    private string name;
     [JsonProperty(PropertyName = "name")]
+    private string name;
     public string Name
     {
         get { return name; }
@@ -19,8 +19,9 @@ public class LineItem : INotifyPropertyChanged
             }
         }
     }
-    private string quantity;
+    
     [JsonProperty(PropertyName = "quantity")]
+    private string quantity;
     public string Quantity
     {
         get { return quantity; }
@@ -33,8 +34,9 @@ public class LineItem : INotifyPropertyChanged
             }
         }
     }
-    private string description;
+    
     [JsonProperty(PropertyName = "description")]
+    private string description;
     public string Description
     {
         get { return description; }
@@ -47,11 +49,12 @@ public class LineItem : INotifyPropertyChanged
             }
         }
     }
-    private string price;
+   
     [JsonProperty(PropertyName = "price")]
+    private string price;
     public string Price
     {
-        get { return Price; }
+        get { return price; }
         set
         {
             if (price != value)

@@ -5,8 +5,8 @@ namespace Onward;
 
 public class Customer : INotifyPropertyChanged
 {
-    private string company;
     [JsonProperty(PropertyName = "company")]
+    private string company;
     public string Company
     {
         get { return company; }
@@ -19,8 +19,9 @@ public class Customer : INotifyPropertyChanged
             }
         }
     }
-    private string contactPerson;
+
     [JsonProperty(PropertyName = "contactPerson")]
+    private string contactPerson;
     public string ContactPerson
     {
         get { return contactPerson; }

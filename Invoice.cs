@@ -5,8 +5,8 @@ namespace Onward;
 
 public class Invoice : INotifyPropertyChanged
 {
-    private Customer customer;
     [JsonProperty(PropertyName = "customer")]
+    private Customer customer;
     public Customer Customer
     {
             get { return customer; }
@@ -19,8 +19,9 @@ public class Invoice : INotifyPropertyChanged
                 }
             }
     }
-    private List<Employee> employees;
+    
     [JsonProperty(PropertyName = "employees")]
+    private List<Employee> employees;
     public List<Employee> Employees
     {
             get { return employees; }
@@ -34,8 +35,9 @@ public class Invoice : INotifyPropertyChanged
             }
     }
 
-    private List<LineItem> items;
+
     [JsonProperty(PropertyName = "items")]
+    private List<LineItem> items;
     public List<LineItem> Items
     {
             get { return items; }
@@ -64,8 +66,8 @@ public class Invoice : INotifyPropertyChanged
             }
     }
 
-    private string invoiceNumber;
     [JsonProperty(PropertyName = "invoiceNumber")]
+    private string invoiceNumber;
     public string InvoiceNumber
     {
             get { return invoiceNumber; }
@@ -79,8 +81,8 @@ public class Invoice : INotifyPropertyChanged
             }
     }
 
-    private string misc;
     [JsonProperty(PropertyName = "misc")]
+    private string misc;
     public string Misc
     {
             get { return misc; }
