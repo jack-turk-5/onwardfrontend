@@ -51,8 +51,8 @@ public class Invoice : INotifyPropertyChanged
             }
     }
 
-    private string date;
     [JsonProperty(PropertyName = "date")]
+    private string date;
     public string Date
     {
             get { return date; }

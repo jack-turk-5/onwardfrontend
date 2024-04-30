@@ -44,7 +44,7 @@ public partial class ViewEmployees : ContentPage
 		}
 		else 
 		{
-			await DisplayAlert("Error", "Employee list can't be found", "Close");
+			await DisplayAlert("Error", "Employee list can't be found: " + json, "Close");
             await Navigation.PopAsync();
         }
 	}
