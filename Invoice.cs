@@ -1,49 +1,121 @@
 using System.ComponentModel;
-// using Newtonsoft.Json;FIXME need this dependency
+using Newtonsoft.Json;
 
 namespace Onward;
 
 public class Invoice : INotifyPropertyChanged
 {
-    private string name;
-    //[JsonProperty(PropertyName = "name")] FIXME need this dependency
-    public string Name
+    [JsonProperty(PropertyName = "customer")]
+    private Customer customer;
+    public Customer Customer
     {
-            get { return name; }
+            get { return customer; }
             set
             {
-                if (name != value)
+                if (customer != value)
                 {
-                    name = value;
-                    OnPropertyChanged(nameof(Name));
+                    customer = value;
+                    OnPropertyChanged(nameof(Customer));
                 }
             }
-        }
-    private string role;
-    // [JsonProperty(PropertyName = "role")] FIXME need this dependency
-    public string Role
+    }
+    
+    [JsonProperty(PropertyName = "employees")]
+    private List<Employee> employees;
+    public List<Employee> Employees
     {
-            get { return role; }
+            get { return employees; }
             set
             {
-                if (role != value)
+                if (employees != value)
                 {
-                    role = value;
-                    OnPropertyChanged(nameof(Role));
+                    employees = value;
+                    OnPropertyChanged(nameof(Employees));
                 }
             }
-        }
+    }
+
+
+    [JsonProperty(PropertyName = "items")]
+    private List<LineItem> items;
+    public List<LineItem> Items
+    {
+            get { return items; }
+            set
+            {
+                if (items != value)
+                {
+                    items = value;
+                    OnPropertyChanged(nameof(Items));
+                }
+            }
+    }
+
+    [JsonProperty(PropertyName = "date")]
+    private string date;
+    public string Date
+    {
+            get { return date; }
+            set
+            {
+                if (date != value)
+                {
+                    date = value;
+                    OnPropertyChanged(nameof(Date));
+                }
+            }
+    }
+
+    [JsonProperty(PropertyName = "invoiceNumber")]
+    private string invoiceNumber;
+    public string InvoiceNumber
+    {
+            get { return invoiceNumber; }
+            set
+            {
+                if (invoiceNumber != value)
+                {
+                    invoiceNumber = value;
+                    OnPropertyChanged(nameof(InvoiceNumber));
+                }
+            }
+    }
+
+    [JsonProperty(PropertyName = "misc")]
+    private string misc;
+    public string Misc
+    {
+            get { return misc; }
+            set
+            {
+                if (misc != value)
+                {
+                    misc = value;
+                    OnPropertyChanged(nameof(Misc));
+                }
+            }
+    }
+    
+    
 
    public Invoice()
    {
-        name = "";
-        role = "";
+        customer = new();
+        employees = [];
+        items = [];
+        date = "";
+        invoiceNumber = "";
+        misc = "";
    }
 
-   public Invoice(string name, string role)
+   public Invoice(Customer customer, List<Employee> employees, List<LineItem> items, string date, string invoiceNumber, string misc)
    {
-    this.name = name;
-    this.role = role;
+        this.customer = customer;
+        this.employees = employees;
+        this.items = items;
+        this.date = date;
+        this.invoiceNumber = invoiceNumber;
+        this.misc = misc;
    }
 
     public event PropertyChangedEventHandler? PropertyChanged;

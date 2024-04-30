@@ -4,20 +4,29 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateInvoice"
              Title="CreateInvoice">
+
     <VerticalStackLayout  Spacing="6" Margin="50">
-        <Grid RowDefinitions="*,*,*,*,*">
-        <Entry x:Name="InvoiceName" Grid.Row="1" VerticalOptions="Center"
+            <!--<Entry x:Name="InvCustomer" Placeholder="Customer" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" Placeholder="Enter Name" />
-        <Entry x:Name="InvoiceRole" Grid.Row="2" VerticalOptions="Center"
+                   HorizontalOptions="Center"/>-->
+            <!--DropdownBox here for contact person-->
+            <!--DropdownBox for employees here-->
+            <!--ItemSelector page-->
+            <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" Placeholder="Enter Role" />
-        <Button Text="Cancel" Grid.Row="3" VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <!--Automatically generate?-->
+            <Entry x:Name="InvNumber" Placeholder="Invoice Number" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" Clicked="Cancel" />
-        <Button Text="Submit" Grid.Row="4" VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Entry x:Name="InvMisc" Placeholder="Other Comments" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" Clicked="Submit" />
-        </Grid>
+                   HorizontalOptions="Center" />
+            <Button Text="Cancel" Clicked="Cancel" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center"/>
+            <Button Text="Submit" Clicked="Submit" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

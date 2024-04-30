@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Onward;
 
@@ -8,7 +9,6 @@ public partial class CreateEmployee : ContentPage
 	private ServerSocket serverSocket;
 	public CreateEmployee()
 	{
-		// BindingContext = this;
 		toSubmit = new Employee();
 		serverSocket = new();
 		InitializeComponent();
@@ -16,7 +16,7 @@ public partial class CreateEmployee : ContentPage
 
 	private async void Cancel(object sender, EventArgs e)
 	{
-		await Navigation.PopModalAsync();
+		await Navigation.PopModalAsync(true);
 	}
 
 	private async void Submit(object sender, EventArgs e)
@@ -25,8 +25,15 @@ public partial class CreateEmployee : ContentPage
 		toSubmit.Role = EmpRole.Text;
 
 		string json = JsonConvert.SerializeObject(toSubmit);
-    	await serverSocket.PostAsync(json, "/employees/newemployee");
-		await Navigation.PopModalAsync(true);
+    	var (response, success) = await serverSocket.PostAsync(json, "/employees/newemployee");
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
     }
 
 }

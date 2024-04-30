@@ -4,9 +4,9 @@
              x:Class="Onward.Manage"
              Title="Manage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Button Text="View Invoices" Clicked="ViewInvoices" />
+        <Button Text="View Line Items" Clicked="ViewLineItems" />
+        <Button Text="View Customers" Clicked="ViewCustomers" />
+        <Button Text="View Employees" Clicked="ViewEmployees" />
     </VerticalStackLayout>
 </ContentPage>

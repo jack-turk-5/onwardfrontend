@@ -1,26 +1,12 @@
 using System.ComponentModel;
-// using Newtonsoft.Json;FIXME need this dependency
+using Newtonsoft.Json;
 
 namespace Onward;
 
 public class LineItem : INotifyPropertyChanged
 {
-    private long id;
-    // [JsonProperty(PropertyName = "id")] FIXME need this dependency
-    public long Id
-    {
-        get { return Id; }
-        set
-        {
-            if (id != value)
-            {
-                id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
-    }
+    [JsonProperty(PropertyName = "name")]
     private string name;
-    //[JsonProperty(PropertyName = "name")] FIXME need this dependency
     public string Name
     {
         get { return name; }
@@ -33,25 +19,27 @@ public class LineItem : INotifyPropertyChanged
             }
         }
     }
-    private int quantity;
-    //[JsonProperty(PropertyName = "quantity")] FIXME need this dependency
-    public int Quantity
+    
+    [JsonProperty(PropertyName = "quantity")]
+    private string quantity;
+    public string Quantity
     {
-        get { return Quantity; }
+        get { return quantity; }
         set
         {
-            if (id != value)
+            if (quantity != value)
             {
-                id = value;
+                quantity = value;
                 OnPropertyChanged(nameof(Quantity));
             }
         }
     }
+    
+    [JsonProperty(PropertyName = "description")]
     private string description;
-    // [JsonProperty(PropertyName = "role")] FIXME need this dependency
     public string Description
     {
-        get { return Description; }
+        get { return description; }
         set
         {
             if (description != value)
@@ -61,11 +49,12 @@ public class LineItem : INotifyPropertyChanged
             }
         }
     }
-    private double price;
-    // [JsonProperty(PropertyName = "id")] FIXME need this dependency
-    public double Price
+   
+    [JsonProperty(PropertyName = "price")]
+    private string price;
+    public string Price
     {
-        get { return Price; }
+        get { return price; }
         set
         {
             if (price != value)
@@ -78,23 +67,21 @@ public class LineItem : INotifyPropertyChanged
 
     public LineItem()
     {
-        id = 0;
         name = "";
-        quantity = 0;
+        quantity = "";
         description = "";
-        price = 0;
+        price = "";
     }
 
-    public LineItem(long id, string name, int quantity, string description, double price)
+    public LineItem(string name, string quantity, string description, string price)
     {
-        this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.description = description;
         this.price = price;
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

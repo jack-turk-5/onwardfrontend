@@ -40,7 +40,7 @@ public class ServerSocket
             }
     }
 
-    public async Task<string> GetAsync(string endpt)
+    public async Task<(string, bool)> GetAsync(string endpt)
     {
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
@@ -48,7 +48,7 @@ public class ServerSocket
         return await HandleResponseAsync(response);
     }
 
-    public async Task<string> PutAsync(string data, string endpt)
+    public async Task<(string, bool)> PutAsync(string data, string endpt)
     {
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
@@ -57,7 +57,7 @@ public class ServerSocket
         return await HandleResponseAsync(response);
     }
 
-    public async Task<string> PostAsync(string data, string endpt)
+    public async Task<(string, bool)> PostAsync(string data, string endpt)
     {
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", await TokenStorage.GetToken());
         var url = baseUrl + endpt;
@@ -66,16 +66,16 @@ public class ServerSocket
         return await HandleResponseAsync(response);
     }
 
-    private static async Task<string> HandleResponseAsync(HttpResponseMessage response)
+    private static async Task<(string, bool)> HandleResponseAsync(HttpResponseMessage response)
     {
-        if (response.IsSuccessStatusCode)
+        if (response.IsSuccessStatusCode && !string.IsNullOrEmpty(response.ToString()))
         {
             string content = await response.Content.ReadAsStringAsync();
-            return content;
+            return (content, true);
         }
         else
         {
-            throw new HttpRequestException($"Error: {response.StatusCode}");
+            return (response.StatusCode.ToString(), false);
         }
     }
 }

@@ -1,29 +1,40 @@
+using Newtonsoft.Json;
+using System.Net;
+
 namespace Onward;
 
 public partial class CreateCustomer : ContentPage
 {
-    Customer toSubmit;
+    private Customer toSubmit;
     private ServerSocket serverSocket;
     public CreateCustomer()
     {
         // BindingContext = this;
-        toSubmit = new Customer();
-        serverSocket = new();
         InitializeComponent();
+        toSubmit = new();
+        serverSocket = new();
     }
 
     private async void Cancel(object sender, EventArgs e)
     {
-        await Navigation.PopModalAsync();
+        await Navigation.PopModalAsync(true);
     }
 
-    private void Submit(object sender, EventArgs e)
+    private async void Submit(object sender, EventArgs e)
     {
-        toSubmit.Name = EmpName.Text;
-        toSubmit.Role = EmpRole.Text;
+        toSubmit.Company = CustCompany.Text;
+        toSubmit.ContactPerson = CustContactPerson.Text;
+        string json = JsonConvert.SerializeObject(toSubmit);
+    	var (response, success) = await serverSocket.PostAsync(json, "/customers/newcustomer");
 
-        //Need to add a line here to serialize, need newtonsoft nuget package
-        Task<string> post = serverSocket.PostAsync(toSubmit.ToString(), "/customers");
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else 
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
     }
 
 }
