@@ -24,6 +24,6 @@ public partial class Manage : ContentPage
 
 	private async void ViewEmployees(object sender, EventArgs e)
 	{
-		await Navigation.PushModalAsync(new ViewEmployees(), true);
+		await Navigation.PushAsync(new ViewEmployees(), true);
 	}
 }

@@ -6,7 +6,7 @@ namespace Onward;
 public partial class ViewEmployees : ContentPage
 {
 	private readonly ServerSocket serverSocket;
-	private List<Employee> employeesDe;
+	private List<Employee>? employeesDe;
 	private ObservableCollection<Employee> employees;
 
     public ObservableCollection<Employee> Employees
@@ -29,14 +29,23 @@ public partial class ViewEmployees : ContentPage
 		if(success)
 		{
             employeesDe = JsonConvert.DeserializeObject<List<Employee>>(json);
-            foreach (Employee employee in employeesDe)
-            { 
-				employees.Add(employee);
+			if (employeesDe != null && employeesDe.Count > 0)
+			{
+				foreach (Employee employee in employeesDe)
+				{
+					employees.Add(employee);
+				}
 			}
+			else
+			{
+				await DisplayAlert("Error", "Employee list is null", "Close");
+				await Navigation.PopAsync();
+            }
 		}
 		else 
 		{
 			await DisplayAlert("Error", "Employee list can't be found", "Close");
-		}
+            await Navigation.PopAsync();
+        }
 	}
 }

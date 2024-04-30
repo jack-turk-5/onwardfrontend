@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.ViewEmployees"
              x:DataType="local:ViewEmployees"
-             Title="ViewEmployees">
+             Title="View Employees">
     <VerticalStackLayout>
         <CollectionView ItemsSource="{Binding Employees}">
             <CollectionView.Header>
