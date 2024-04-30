@@ -16,7 +16,7 @@ public partial class CreateEmployee : ContentPage
 
 	private async void Cancel(object sender, EventArgs e)
 	{
-		await Navigation.PopModalAsync();
+		await Navigation.PopModalAsync(true);
 	}
 
 	private async void Submit(object sender, EventArgs e)

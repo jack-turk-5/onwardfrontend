@@ -5,8 +5,15 @@
              x:Class="Onward.CreateInvoice"
              Title="CreateInvoice">
     <VerticalStackLayout>
-        <Entry x:Name="InvoiceName" Placeholder="Enter Name" />
-            <Entry x:Name="InvoiceRole" Placeholder="Enter Role" />
+            <!--<Entry x:Name="InvCustomer" Placeholder="Customer"/>-->
+            <!--DropdownBox here for contact person-->
+            <!--DropdownBox for employees here-->
+            <Entry x:Name="InvRole" Placeholder="Enter Role" />
+            <!--ItemSelector page-->
+            <Entry x:Name="InvDate" IsEnabled="False" />
+            <!--Automatically generate?-->
+            <Entry x:Name="InvNumber" Placeholder="Invoice Number" />
+            <Entry x:Name="InvMisc" Placeholder="Other Comments" />
             <Button Text="Cancel" Clicked="Cancel" />
             <Button Text="Submit" Clicked="Submit" />
     </VerticalStackLayout>

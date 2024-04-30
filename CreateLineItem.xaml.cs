@@ -1,31 +1,33 @@
+using Newtonsoft.Json;
+
 namespace Onward;
 
 public partial class CreateLineItem : ContentPage
 {
-    LineItem toSubmit;
-    private ServerSocket serverSocket;
+    private LineItem toSubmit;
+    private readonly ServerSocket serverSocket;
     public CreateLineItem()
 	{
-        // BindingContext = this;
-        toSubmit = new LineItem();
-        serverSocket = new();
         InitializeComponent();
+        BindingContext = this;
+        toSubmit = new();
+        serverSocket = new();
     }
 
     private async void Cancel(object sender, EventArgs e)
     {
-        await Navigation.PopModalAsync();
+        await Navigation.PopModalAsync(true);
     }
 
-    private void Submit(object sender, EventArgs e)
+    private async void Submit(object sender, EventArgs e)
     {
-        toSubmit.Id = (long)Convert.ToDouble(EmpID);
         toSubmit.Name = EmpName.Text;
-        toSubmit.Quantity = (int)Convert.ToDouble(EmpQuantity);
+        toSubmit.Quantity = EmpQuantity.Text;
         toSubmit.Description = EmpDescription.Text;
-        toSubmit.Price = (int)Convert.ToDouble(EmpPrice);
+        toSubmit.Price = EmpPrice.Text;
 
-        //Need to add a line here to serialize, need newtonsoft nuget package
-        Task<string> post = serverSocket.PostAsync(toSubmit.ToString(), "/lineitem");
+        string json = JsonConvert.SerializeObject(toSubmit);
+    	await serverSocket.PostAsync(json, "/lineitems/newlineitem");
+		await Navigation.PopModalAsync(true);
     }
 }

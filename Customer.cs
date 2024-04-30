@@ -1,53 +1,52 @@
 using System.ComponentModel;
-// using Newtonsoft.Json;FIXME need this dependency
-
+using Newtonsoft.Json;
 
 namespace Onward;
 
 public class Customer : INotifyPropertyChanged
 {
-    private string name;
-    //[JsonProperty(PropertyName = "name")] FIXME need this dependency
-    public string Name
+    private string company;
+    [JsonProperty(PropertyName = "company")]
+    public string Company
     {
-        get { return name; }
+        get { return company; }
         set
         {
-            if (name != value)
+            if (company != value)
             {
-                name = value;
-                OnPropertyChanged(nameof(Name));
+                company = value;
+                OnPropertyChanged(nameof(Company));
             }
         }
     }
-    private string role;
-    // [JsonProperty(PropertyName = "role")] FIXME need this dependency
-    public string Role
+    private string contactPerson;
+    [JsonProperty(PropertyName = "contactPerson")]
+    public string ContactPerson
     {
-        get { return role; }
+        get { return contactPerson; }
         set
         {
-            if (role != value)
+            if (contactPerson != value)
             {
-                role = value;
-                OnPropertyChanged(nameof(Role));
+                contactPerson = value;
+                OnPropertyChanged(nameof(ContactPerson));
             }
         }
     }
 
     public Customer()
     {
-        name = "";
-        role = "";
+        company = "";
+        contactPerson = "";
     }
 
     public Customer(string name, string role)
     {
-        this.name = name;
-        this.role = role;
+        this.company = name;
+        this.contactPerson = role;
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     protected virtual void OnPropertyChanged(string propertyName)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

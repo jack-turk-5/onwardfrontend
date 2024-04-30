@@ -8,6 +8,7 @@
         <Entry x:Name="Email" Placeholder="Email" />
         <Entry x:Name="Password" Placeholder="Password" />
         <Entry x:Name="Roles" Placeholder="Roles" />
+        <Button Text="Cancel" Clicked="Cancel" />
         <Button Text="Submit" Clicked="Submit" />
     </VerticalStackLayout>
 </ContentPage>

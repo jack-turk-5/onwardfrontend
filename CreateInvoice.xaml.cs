@@ -1,29 +1,37 @@
+using Newtonsoft.Json;
+
 namespace Onward;
 
 public partial class CreateInvoice : ContentPage
 {
-	Invoice newInvoice;
+	private Invoice newInvoice;
 	private ServerSocket serverSocket;
 	public CreateInvoice()
 	{
-		// BindingContext = this;
-		newInvoice = new Invoice();
+		BindingContext = this;
+		newInvoice = new();
 		serverSocket = new();
 		InitializeComponent();
+		InvDate.Text = DateTime.Now.ToShortDateString();
 	}
 
 	private async void Cancel(object sender, EventArgs e)
 	{
-		await Navigation.PopModalAsync();
+		await Navigation.PopModalAsync(true);
 	}
 
-	private void Submit(object sender, EventArgs e)
+	private async void Submit(object sender, EventArgs e)
 	{
-		newInvoice.Name = InvoiceName.Text;
-		newInvoice.Role = InvoiceRole.Text;
+		newInvoice.Customer = new();
+		newInvoice.Employees = [];
+		newInvoice.Items = [];
+		newInvoice.Date = InvDate.Text;
+		newInvoice.InvoiceNumber = InvNumber.Text;
+		newInvoice.Misc = InvMisc.Text;
 
-		//Need to add a line here to serialize, need newtonsoft nuget package
-		Task<string>post = serverSocket.PostAsync(newInvoice.ToString(), "/invoice");
+		string json = JsonConvert.SerializeObject(newInvoice);
+    	await serverSocket.PostAsync(json, "/invoices/newinvoice");
+		await Navigation.PopModalAsync(true);
 	}
 
 }

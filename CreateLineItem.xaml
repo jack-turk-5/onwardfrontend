@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateLineItem"
              Title="CreateLineItem">
     <StackLayout Spacing="6" Margin="50">
         <Grid RowDefinitions="*,*,*,*,*,*,*,*,*">
-            <Entry x:Name="EmpID" Grid.Row="1" VerticalOptions="Center"
-                    WidthRequest="300" Margin="10"
-                HorizontalOptions="Center" Placeholder="Enter ID" />
             <Entry x:Name="EmpName" Grid.Row="2" VerticalOptions="Center"
                     WidthRequest="300" Margin="10"
                 HorizontalOptions="Center" Placeholder="Enter Name" />

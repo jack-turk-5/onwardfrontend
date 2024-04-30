@@ -5,8 +5,8 @@
              x:Class="Onward.CreateEmployee"
              Title="CreateEmployee">
     <VerticalStackLayout>
-        <Entry x:Name="EmpName" Placeholder="Enter Name" />
-        <Entry x:Name="EmpRole" Placeholder="Enter Role" />
+        <Entry x:Name="EmpName" Placeholder="Name" />
+        <Entry x:Name="EmpRole" Placeholder="Role" />
         <Button Text="Cancel" Clicked="Cancel" />
         <Button Text="Submit" Clicked="Submit" />
     </VerticalStackLayout>
