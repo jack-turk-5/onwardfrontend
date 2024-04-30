@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Onward;
 
@@ -20,7 +21,14 @@ public partial class CreateUser : ContentPage
 	{
 		var NewUser = new { username = Username.Text, email = Email.Text, password = Password.Text, roles = Roles.Text };
 		string jsonStr = JsonConvert.SerializeObject(NewUser);
-		await serverSocket.PostAsync(jsonStr, "/auth/addnewuser");
-		await Navigation.PopModalAsync(true);
-	}
+		var (response, success) = await serverSocket.PostAsync(jsonStr, "/auth/addnewuser");
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
+    }
 }

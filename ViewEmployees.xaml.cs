@@ -1,9 +1,42 @@
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+
 namespace Onward;
 
 public partial class ViewEmployees : ContentPage
 {
+	private readonly ServerSocket serverSocket;
+	private List<Employee> employeesDe;
+	private ObservableCollection<Employee> employees;
+
+    public ObservableCollection<Employee> Employees
+	{  get { return employees; } 
+	   set { employees = value; }
+	}
 	public ViewEmployees()
 	{
-		InitializeComponent();
+        serverSocket = new();
+		employeesDe = [];
+		employees = [];
+		PopulateEmployees();
+		BindingContext = this;
+        InitializeComponent();
+	}
+
+	private async void PopulateEmployees()
+	{
+		var (json, success) = await serverSocket.GetAsync("/employees/getemployees");
+		if(success)
+		{
+            employeesDe = JsonConvert.DeserializeObject<List<Employee>>(json);
+            foreach (Employee employee in employeesDe)
+            { 
+				employees.Add(employee);
+			}
+		}
+		else 
+		{
+			await DisplayAlert("Error", "Employee list can't be found", "Close");
+		}
 	}
 }

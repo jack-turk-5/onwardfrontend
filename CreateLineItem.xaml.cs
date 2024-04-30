@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Onward;
 
@@ -27,7 +28,14 @@ public partial class CreateLineItem : ContentPage
         toSubmit.Price = EmpPrice.Text;
 
         string json = JsonConvert.SerializeObject(toSubmit);
-    	await serverSocket.PostAsync(json, "/lineitems/newlineitem");
-		await Navigation.PopModalAsync(true);
+    	var (response, success) = await serverSocket.PostAsync(json, "/lineitems/newlineitem");
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
     }
 }

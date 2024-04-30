@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Onward;
 
@@ -24,8 +25,16 @@ public partial class CreateCustomer : ContentPage
         toSubmit.Company = CustCompany.Text;
         toSubmit.ContactPerson = CustContactPerson.Text;
         string json = JsonConvert.SerializeObject(toSubmit);
-    	await serverSocket.PostAsync(json, "/customers/newcustomer");
-		await Navigation.PopModalAsync(true);
+    	var (response, success) = await serverSocket.PostAsync(json, "/customers/newcustomer");
+
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else 
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
     }
 
 }

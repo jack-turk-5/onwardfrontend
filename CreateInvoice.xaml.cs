@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Net;
 
 namespace Onward;
 
@@ -30,8 +31,15 @@ public partial class CreateInvoice : ContentPage
 		newInvoice.Misc = InvMisc.Text;
 
 		string json = JsonConvert.SerializeObject(newInvoice);
-    	await serverSocket.PostAsync(json, "/invoices/newinvoice");
-		await Navigation.PopModalAsync(true);
-	}
+    	var (response, success) = await serverSocket.PostAsync(json, "/invoices/newinvoice");
+        if (success)
+        {
+            await Navigation.PopModalAsync(true);
+        }
+        else
+        {
+            await DisplayAlert("Error", "Data not posted: " + response.ToString(), "Close");
+        }
+    }
 
 }
