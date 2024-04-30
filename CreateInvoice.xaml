@@ -4,16 +4,29 @@
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateInvoice"
              Title="CreateInvoice">
-    <VerticalStackLayout>
-            <!--<Entry x:Name="InvCustomer" Placeholder="Customer"/>-->
+
+    <VerticalStackLayout  Spacing="6" Margin="50">
+            <!--<Entry x:Name="InvCustomer" Placeholder="Customer" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center"/>-->
             <!--DropdownBox here for contact person-->
             <!--DropdownBox for employees here-->
             <!--ItemSelector page-->
-            <Entry x:Name="InvDate" IsEnabled="False" />
+            <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center"/>
             <!--Automatically generate?-->
-            <Entry x:Name="InvNumber" Placeholder="Invoice Number" />
-            <Entry x:Name="InvMisc" Placeholder="Other Comments" />
-            <Button Text="Cancel" Clicked="Cancel" />
-            <Button Text="Submit" Clicked="Submit" />
+            <Entry x:Name="InvNumber" Placeholder="Invoice Number" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center"/>
+            <Entry x:Name="InvMisc" Placeholder="Other Comments" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" />
+            <Button Text="Cancel" Clicked="Cancel" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center"/>
+            <Button Text="Submit" Clicked="Submit" VerticalOptions="Center"
+                   WidthRequest="300" Margin="10"
+                   HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
