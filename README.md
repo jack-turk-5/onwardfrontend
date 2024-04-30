@@ -51,8 +51,6 @@ Follow the step for **Visual Studio 2022** from [Microsoft's website](https://vi
 5. Having  Microsoft.NET.ILLink.Tasks(8.0.4) tell where to reference by an SDK.[nuget.org's website](https://www.nuget.org/packages/Microsoft.NET.ILLink.Tasks/8.0.4?_src=template) <br> 
 
 6. Having Newtonsoft.Json(13.0.3) a  high-performance JSON framework for . NET.[nuget.org's website](https://www.nuget.org/packages/Newtonsoft.Json/13.0.3?_src=template) <br> 
-
-7. Having GoogleGson(2.10.1.8)Gson library use to convert a java object into Json a string convert Json string to an equivalent Java object.[nuget.org's website](https://www.nuget.org/packages/GoogleGson/2.10.1.8?_src=template) <br> 
   
 ## _Installation_
 
