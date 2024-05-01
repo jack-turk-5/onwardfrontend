@@ -7,19 +7,19 @@ public partial class Manage : ContentPage
 		InitializeComponent();
 	}
 
-	private void ViewInvoices(object sender, EventArgs e)
+	private async void ViewInvoices(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		await Navigation.PushAsync(new ViewInvoices(), true);
 	}
 
-	private void ViewLineItems(object sender, EventArgs e)
+	private async void ViewLineItems(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		await Navigation.PushAsync(new ViewLineItems(), true);
 	}
 
-	private void ViewCustomers(object sender, EventArgs e)
+	private async void ViewCustomers(object sender, EventArgs e)
 	{
-		throw new NotImplementedException();
+		await Navigation.PushAsync(new ViewCustomers(), true);
 	}
 
 	private async void ViewEmployees(object sender, EventArgs e)
