@@ -6,6 +6,7 @@
              x:DataType="local:CreateInvoice"
              Title="CreateInvoice">
 
+<ScrollView>
     <VerticalStackLayout  Spacing="6" Margin="50">
 <!--Needs Attention, fix layout allocation for listviews -->
         <Entry x:Name="CustomerBoxEntry" Placeholder="Company"
@@ -40,4 +41,5 @@
                    WidthRequest="300" Margin="10"
                    HorizontalOptions="Center" />
     </VerticalStackLayout>
+</ScrollView>
 </ContentPage>
