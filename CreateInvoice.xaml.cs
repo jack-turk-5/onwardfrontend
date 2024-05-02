@@ -1,5 +1,7 @@
+using Microsoft.Maui.Controls.Handlers.Compatibility;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using UIKit;
 
 namespace Onward;
 
@@ -22,6 +24,9 @@ public partial class CreateInvoice : ContentPage
         get { return customerContacts; }
         set { customerContacts = value; }
     }
+
+    public static event Action? ViewCellSizeChangedEvent; 
+
     public CreateInvoice()
 	{
 		BindingContext = this;
@@ -29,28 +34,31 @@ public partial class CreateInvoice : ContentPage
 		serverSocket = new();
         customersDe = [];
         customerCompanies = [];
+        customerCompanies.Add("            ");
         customerContacts = [];
-        PopulateCustomers();
-		InitializeComponent();
+        customerContacts.Add("              ");
+        GetCustomers();
+        InitializeComponent();
         InvDate.Text = DateTime.Now.ToShortDateString();
         CustomerListView.ItemSelected += (object? sender, SelectedItemChangedEventArgs e) =>
         {
             var customer = (string)e.SelectedItem;
             CustomerBoxEntry.Text = customer;
-            CustomerListView.IsVisible = false;
+            customerCompanies.Clear();
             customerContacts.Clear();
             ContactBoxEntry.Text = "";
-            PopulateContacts();
+            ViewCellSizeChangedEvent?.Invoke();
         };
         ContactListView.ItemSelected += (object? sender, SelectedItemChangedEventArgs e) =>
         {
             var customer = (string)e.SelectedItem;
             ContactBoxEntry.Text = customer;
-            ContactListView.IsVisible = false;
+            customerContacts.Clear();
+            ViewCellSizeChangedEvent?.Invoke();
         };
     }
 
-    private async void PopulateCustomers()
+    private async void GetCustomers()
     {
         var (json, success) = await serverSocket.GetAsync("/customers/getcustomers");
         if (success)
@@ -58,13 +66,7 @@ public partial class CreateInvoice : ContentPage
             customersDe = JsonConvert.DeserializeObject<List<Customer>>(json);
             if (customersDe != null && customersDe.Count > 0)
             {
-                foreach (Customer customer in customersDe)
-                {
-                    if(!customerCompanies.Contains(customer.Company))
-                    { 
-                        customerCompanies.Add(customer.Company);
-                    }
-                }
+                return;
             }
             else
             {
@@ -79,10 +81,26 @@ public partial class CreateInvoice : ContentPage
         }
     }
 
+    private void PopulateCustomers()
+    {
+        if (customersDe != null && customersDe.Count > 0)
+            {
+                customerCompanies.Clear();
+                foreach (Customer customer in customersDe)
+                {
+                    if(!customerCompanies.Contains(customer.Company))
+                    { 
+                        customerCompanies.Add(customer.Company);
+                    }
+                }
+            }
+    }
+
     private void PopulateContacts()
     {
         if (customersDe != null && customersDe.Count > 0)
         {
+            customerContacts.Clear();
             foreach (Customer customer in customersDe)
             {
                 if(customer.Company.Equals(CustomerBoxEntry.Text) && !customerContacts.Contains(customer.ContactPerson))
@@ -121,12 +139,31 @@ public partial class CreateInvoice : ContentPage
 
     private void DisplayCustomers(object sender, EventArgs e)
     {
-        CustomerListView.IsVisible = true;
+        PopulateCustomers();
+        ViewCellSizeChangedEvent?.Invoke();
     }
 
     private void DisplayContacts(object sender, EventArgs e)
     {
-        ContactListView.IsVisible = true;
+        
+        PopulateContacts();
+        ViewCellSizeChangedEvent?.Invoke();
     }
 
+}
+
+public class CustomListViewRenderer : ListViewRenderer
+{
+    public CustomListViewRenderer()
+    {
+        CreateInvoice.ViewCellSizeChangedEvent += UpdateTableView;
+    }
+
+    private void UpdateTableView()
+    {
+        UITableView? tv = Control;
+        if (tv == null) return;
+        tv.BeginUpdates();
+        tv.EndUpdates();
+    }
 }
