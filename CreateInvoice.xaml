@@ -3,14 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Onward"
              x:Class="Onward.CreateInvoice"
+             x:DataType="local:CreateInvoice"
              Title="CreateInvoice">
 
     <VerticalStackLayout  Spacing="6" Margin="50">
-            <!--<Entry x:Name="InvCustomer" Placeholder="Customer" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center"/>-->
-            <!--DropdownBox here for contact person-->
-            <!--DropdownBox for employees here-->
+
+        <Entry x:Name="CustomerBoxEntry" Placeholder="Company"
+                Focused="DisplayCustomers" Unfocused="CollapseCustomers" 
+                VerticalOptions="Center"
+                WidthRequest="300" Margin="10"
+                HorizontalOptions="Center"/>
+        <ListView x:Name="CustomerListView" IsVisible="False" 
+                ItemsSource="{Binding CustomerCompanies}" 
+                VerticalOptions="Center"
+                WidthRequest="300" Margin="10"
+                HorizontalOptions="Center" />
+
+        <Entry x:Name="ContactBoxEntry" Placeholder="Contact" 
+                Focused="DisplayContacts" Unfocused="CollapseContacts"
+                VerticalOptions="Center"
+                WidthRequest="300" Margin="10"
+                HorizontalOptions="Center"/>
+        <ListView x:Name="ContactListView" IsVisible="False" 
+                ItemsSource="{Binding CustomerContacts}"
+                VerticalOptions="Center"
+                WidthRequest="300" Margin="10"
+                HorizontalOptions="Center" />
+
             <!--ItemSelector page-->
             <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
                    WidthRequest="300" Margin="10"

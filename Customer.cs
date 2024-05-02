@@ -43,8 +43,13 @@ public class Customer : INotifyPropertyChanged
 
     public Customer(string name, string role)
     {
-        this.company = name;
-        this.contactPerson = role;
+        company = name;
+        contactPerson = role;
+    }
+
+    public override string ToString()
+    {
+        return "Company: " + company + " Contact Person: " + contactPerson;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
