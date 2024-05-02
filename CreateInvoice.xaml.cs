@@ -37,14 +37,18 @@ public partial class CreateInvoice : ContentPage
         {
             var customer = (string)e.SelectedItem;
             CustomerBoxEntry.Text = customer;
+            CustomerListView.IsVisible = false;
             customerContacts.Clear();
-            ContactBoxEntry.Text = "";
             PopulateContacts();
+            ContactBoxEntry.Text = "";
+            
         };
+
         ContactListView.ItemSelected += (object? sender, SelectedItemChangedEventArgs e) =>
         {
             var customer = (string)e.SelectedItem;
             ContactBoxEntry.Text = customer;
+            ContactListView.IsVisible = false;
         };
     }
 

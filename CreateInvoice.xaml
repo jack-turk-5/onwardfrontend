@@ -6,40 +6,35 @@
              x:DataType="local:CreateInvoice"
              Title="CreateInvoice">
 
-<ScrollView>
-    <VerticalStackLayout  Spacing="6" Margin="50">
-<!--Needs Attention, fix layout allocation for listviews -->
-        <Entry x:Name="CustomerBoxEntry" Placeholder="Company"
-                Focused="DisplayCustomers" Unfocused="CollapseCustomers" 
-                />
-        <ListView x:Name="CustomerListView" IsVisible="False" 
-                ItemsSource="{Binding CustomerCompanies}" 
-                 />
+       <ScrollView>
+              <Grid RowDefinitions="auto,*,auto,*,auto,auto,auto,*">
+                     <Entry x:Name="CustomerBoxEntry" Placeholder="Company"
+                            Focused="DisplayCustomers"
+                            />
+                     <ListView x:Name="CustomerListView" IsVisible="False" 
+                            ItemsSource="{Binding CustomerCompanies}" 
+                            Grid.Row="1"/>
 
-        <Entry x:Name="ContactBoxEntry" Placeholder="Contact" 
-                Focused="DisplayContacts" Unfocused="CollapseContacts"
-               />
-        <ListView x:Name="ContactListView" IsVisible="False" 
-                ItemsSource="{Binding CustomerContacts}"
-                />
+                     <Entry x:Name="ContactBoxEntry" Placeholder="Contact" 
+                            Focused="DisplayContacts"
+                            Grid.Row="2" />
+                     <ListView x:Name="ContactListView" IsVisible="False" 
+                            ItemsSource="{Binding CustomerContacts}"
+                            Grid.Row="3" />
 
-            <!--ItemSelector page-->
-            <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center"/>
-            <!--Automatically generate?-->
-            <Entry x:Name="InvNumber" Placeholder="Invoice Number" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center"/>
-            <Entry x:Name="InvMisc" Placeholder="Other Comments" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" />
-            <Button Text="Cancel" Clicked="Cancel" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center"/>
-            <Button Text="Submit" Clicked="Submit" VerticalOptions="Center"
-                   WidthRequest="300" Margin="10"
-                   HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ScrollView>
+                     <!--ItemSelector page-->
+                     <Entry x:Name="InvDate" IsEnabled="False" 
+                            Grid.Row="4"/>
+                     <!--Automatically generate?-->
+                     <Entry x:Name="InvNumber" Placeholder="Invoice Number" 
+                            Grid.Row="5"/>
+                     <Entry x:Name="InvMisc" Placeholder="Other Comments" 
+                            Grid.Row="6"/>
+                     <HorizontalStackLayout Grid.Row="7" 
+                            HorizontalOptions="CenterAndExpand">
+                            <Button Text="Cancel" Clicked="Cancel" />
+                            <Button Text="Submit" Clicked="Submit" />
+                     </HorizontalStackLayout>
+              </Grid>
+       </ScrollView>
 </ContentPage>
