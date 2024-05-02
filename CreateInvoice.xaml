@@ -7,28 +7,20 @@
              Title="CreateInvoice">
 
     <VerticalStackLayout  Spacing="6" Margin="50">
-
+<!--Needs Attention, fix layout allocation for listviews -->
         <Entry x:Name="CustomerBoxEntry" Placeholder="Company"
                 Focused="DisplayCustomers" Unfocused="CollapseCustomers" 
-                VerticalOptions="Center"
-                WidthRequest="300" Margin="10"
-                HorizontalOptions="Center"/>
+                />
         <ListView x:Name="CustomerListView" IsVisible="False" 
                 ItemsSource="{Binding CustomerCompanies}" 
-                VerticalOptions="Center"
-                WidthRequest="300" Margin="10"
-                HorizontalOptions="Center" />
+                 />
 
         <Entry x:Name="ContactBoxEntry" Placeholder="Contact" 
                 Focused="DisplayContacts" Unfocused="CollapseContacts"
-                VerticalOptions="Center"
-                WidthRequest="300" Margin="10"
-                HorizontalOptions="Center"/>
+               />
         <ListView x:Name="ContactListView" IsVisible="False" 
                 ItemsSource="{Binding CustomerContacts}"
-                VerticalOptions="Center"
-                WidthRequest="300" Margin="10"
-                HorizontalOptions="Center" />
+                />
 
             <!--ItemSelector page-->
             <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
