@@ -37,6 +37,7 @@ public partial class CreateInvoice : ContentPage
         {
             var customer = (string)e.SelectedItem;
             CustomerBoxEntry.Text = customer;
+            CustomerListView.IsVisible = false;
             customerContacts.Clear();
             ContactBoxEntry.Text = "";
             PopulateContacts();
@@ -45,6 +46,7 @@ public partial class CreateInvoice : ContentPage
         {
             var customer = (string)e.SelectedItem;
             ContactBoxEntry.Text = customer;
+            ContactListView.IsVisible = false;
         };
     }
 
@@ -122,19 +124,9 @@ public partial class CreateInvoice : ContentPage
         CustomerListView.IsVisible = true;
     }
 
-    private void CollapseCustomers(object sender, EventArgs e)
-    {
-        CustomerListView.IsVisible = false;
-    }
-
     private void DisplayContacts(object sender, EventArgs e)
     {
         ContactListView.IsVisible = true;
-    }
-
-    private void CollapseContacts(object sender, EventArgs e)
-    {
-        ContactListView.IsVisible = false;
     }
 
 }
