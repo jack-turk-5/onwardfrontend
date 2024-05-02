@@ -1,7 +1,6 @@
-using Microsoft.Maui.Controls.Handlers.Compatibility;
+using CommunityToolkit.Maui.Views;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
-using UIKit;
 
 namespace Onward;
 
@@ -25,7 +24,13 @@ public partial class CreateInvoice : ContentPage
         set { customerContacts = value; }
     }
 
-    public static event Action? ViewCellSizeChangedEvent; 
+    private List<LineItem> items;
+    public List<LineItem> Items
+    {
+        get { return items; }
+        set { items = value; }
+    }
+
 
     public CreateInvoice()
 	{
@@ -33,6 +38,7 @@ public partial class CreateInvoice : ContentPage
 		newInvoice = new();
 		serverSocket = new();
         customersDe = [];
+        items = [];
         customerCompanies = [];
         customerCompanies.Add("            ");
         customerContacts = [];
@@ -47,14 +53,12 @@ public partial class CreateInvoice : ContentPage
             customerCompanies.Clear();
             customerContacts.Clear();
             ContactBoxEntry.Text = "";
-            ViewCellSizeChangedEvent?.Invoke();
         };
         ContactListView.ItemSelected += (object? sender, SelectedItemChangedEventArgs e) =>
         {
             var customer = (string)e.SelectedItem;
             ContactBoxEntry.Text = customer;
             customerContacts.Clear();
-            ViewCellSizeChangedEvent?.Invoke();
         };
     }
 
@@ -111,6 +115,13 @@ public partial class CreateInvoice : ContentPage
         }
     }
 
+    private async void SelectItems(object sender, EventArgs e)
+    {
+        var popup = new Popup();
+        var itemList = await this.ShowPopupAsync(popup, CancellationToken.None);
+        items = itemList as List<LineItem> ?? [];
+    }
+
     private async void Cancel(object sender, EventArgs e)
 	{
 		await Navigation.PopModalAsync(true);
@@ -118,9 +129,9 @@ public partial class CreateInvoice : ContentPage
 
 	private async void Submit(object sender, EventArgs e)
 	{
-		newInvoice.Customer = new();
+		newInvoice.Customer = new Customer(CustomerBoxEntry.Text, ContactBoxEntry.Text);
 		newInvoice.Employees = [];
-		newInvoice.Items = [];
+		newInvoice.Items = items;
 		newInvoice.Date = InvDate.Text;
 		newInvoice.InvoiceNumber = InvNumber.Text;
 		newInvoice.Misc = InvMisc.Text;
@@ -140,30 +151,12 @@ public partial class CreateInvoice : ContentPage
     private void DisplayCustomers(object sender, EventArgs e)
     {
         PopulateCustomers();
-        ViewCellSizeChangedEvent?.Invoke();
     }
 
     private void DisplayContacts(object sender, EventArgs e)
     {
         
         PopulateContacts();
-        ViewCellSizeChangedEvent?.Invoke();
     }
 
-}
-
-public class CustomListViewRenderer : ListViewRenderer
-{
-    public CustomListViewRenderer()
-    {
-        CreateInvoice.ViewCellSizeChangedEvent += UpdateTableView;
-    }
-
-    private void UpdateTableView()
-    {
-        UITableView? tv = Control;
-        if (tv == null) return;
-        tv.BeginUpdates();
-        tv.EndUpdates();
-    }
 }

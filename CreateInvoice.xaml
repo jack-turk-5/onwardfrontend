@@ -32,7 +32,8 @@
                             WidthRequest="300" Margin="10"
                             HorizontalOptions="Center" Grid.Row="3"/>
               </Grid>
-              <!--ItemSelector page-->
+           <!-- <Button Text="Items" Clicked="SelectItems" /> -->
+            <!--ItemSelector page-->
               <Entry x:Name="InvDate" IsEnabled="False" VerticalOptions="Center"
                      WidthRequest="300" Margin="10"
                      HorizontalOptions="Center"/>

@@ -4,7 +4,7 @@
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugFramework>net8.0-windows10.0.19041.0</ActiveDebugFramework>
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
-    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <SelectedPlatformGroup>LocalDevice</SelectedPlatformGroup>
     <DefaultDevice>pixel_5</DefaultDevice>
     <DeveloperId>8XWV724WV4</DeveloperId>
     <DevelopmentTeamId>8XWV724WV4</DevelopmentTeamId>
